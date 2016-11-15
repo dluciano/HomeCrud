@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Should;
+using System.Collections.Generic;
 using System.Linq;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -59,6 +60,23 @@ namespace HomeCrud.Test.Specs
         {
             table.CompareToInstance(_homeDetails);
         }
+
+        [Given(@"I add a person with the following data to that home")]
+        public void GivenIAddAPersonWithTheFollowingDataToThatHome(Table table)
+        {
+            var request = table.CreateInstance<CreatePersonRequest>();
+            request.Home = _container.GetInstance<IListHomeFeature>().Exec().Last().Id;
+            var feature = _container.GetInstance<ICreatePersonFeature>();
+            feature.Exec(request);
+        }
+
+        [Then(@"the person count should be (.*)")]
+        public void ThenThePersonCountShouldBe(int count) =>
+            _homeDetails.People.Count().ShouldEqual(count);
+
+        [Then(@"the following person data should be displayed")]
+        public void ThenTheFollowingPersonDataShouldBeDisplayed(Table table) =>
+            table.CompareToSet(_homeDetails.People);
 
         [Then(@"should exists a home with data")]
         public void LastShouldBeEqulsTo(Table table)

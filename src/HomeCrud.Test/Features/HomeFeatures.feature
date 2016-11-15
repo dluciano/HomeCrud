@@ -33,11 +33,28 @@ Scenario: View Home Details
 		| Field   | Value          |
 		| Name    | Fransic's Home |
 		| Address | Test Address   |
+	And I add a person with the following data to that home
+		| Field          | Value        |
+		| FirstName      | Dawlin       |
+		| LastName       | Peña Luciano |
+		| Gender         | Male         |
+		| Identification | 00128739231  |
+	And I add a person with the following data to that home
+		| Field          | Value       |
+		| FirstName      | Sister      |
+		| LastName       | Peña        |
+		| Gender         | Female      |
+		| Identification | 00128739233 |
 	When I access the details of the last created home
 	Then the following home should exists
 		| Field   | Value          |
 		| Name    | Fransic's Home |
 		| Address | Test Address   |
+	And the person count should be 2
+	And the following person data should be displayed
+		| FullName            | Gender | 
+		| Dawlin Peña Luciano | Male   | 
+		| Sister Peña         | Female | 
 	
 Scenario: Update Home
 	Given I create a home with the following data
