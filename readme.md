@@ -20,12 +20,19 @@ This project include:
 
 ##Release Notes
 
+v0.3 Everything is working in the test
+
+* Add, list, details update and remove homes features done.
+* Add, list, details and remove person features done.
+bugs:
+* When update home, the actual values aren't shown (I should done a feature for showUpdate) (+ -)
+* When delete person, you are redirected to Homes Index page. (minor)
+* No exists delete confirmation, in person and home views (+ -)
+* Update page should show the home name (as an identifier) (minor)
+
+v0.2 ???
+
 v0.1 Everything is working in the test
 
 * Add, list, details and remove homes.
 * Add, list, details and remove people.
-
-What is not concluded?
-
-* MVC Project (Very important)
-* Refactor (everything is in the test project. This is beacuase I don't have ReSharper for making a fast refactor 'sorry')
