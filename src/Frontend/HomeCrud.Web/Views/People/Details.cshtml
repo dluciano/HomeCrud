@@ -1,0 +1,45 @@
+﻿@model  HomeCrud.Core.Response.PersonDetailsResponse
+
+@{
+    ViewBag.Title = "Details of Person";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Details of Person: @Model.FirstName @Model.LastName</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <dl>
+            <dt>@Html.DisplayNameFor(m => m.FirstName)</dt>
+            <dd>@Html.ValueFor(m => m.FirstName)</dd>
+            <dt>@Html.DisplayNameFor(m => m.LastName)</dt>
+            <dd>@Html.ValueFor(m => m.LastName)</dd>
+            <dt>@Html.DisplayNameFor(m => m.Identification)</dt>
+            <dd>@Html.ValueFor(m => m.Identification)</dd>
+            <dt>@Html.DisplayNameFor(m => m.Home)</dt>
+            <dd>
+                <a href="@Url.Action("Details", "Homes", new { id=Model.HomeId})">
+                    @Html.ValueFor(m => m.Home)
+                </a>
+            </dd>
+            <dt>@Html.DisplayNameFor(m => m.Gender)</dt>
+            <dd>@Html.ValueFor(m => m.Gender)</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-1">
+        <a href="@Url.Action("Update", "People", new { id = Model.Id })" class="btn btn-default">Update</a>
+    </div>
+    <div class="col-xs-1">
+        @using (Html.BeginForm("Delete", "People", new { id = Model.Id }, FormMethod.Post))
+            {
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-warning">Delete</button>
+        }
+    </div>
+</div>

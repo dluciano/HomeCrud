@@ -15,7 +15,7 @@ namespace HomeCrud.Core.Request
             FirstName = FirstName,
             LastName = LastName,
             Gender = Gender,
-            Identification = Identification
+            Identification = Identification,
         };
     }
 }

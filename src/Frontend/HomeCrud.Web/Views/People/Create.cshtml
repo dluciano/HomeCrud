@@ -1,0 +1,57 @@
+﻿@model  HomeCrud.Core.Request.CreatePersonRequest
+
+@{
+    ViewBag.Title = "Create Person";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Create Person</h2>
+    </div>
+</div>
+
+@using (Html.BeginForm("Create", "People", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken();
+    @Html.ValidationSummary(true);
+
+    @Html.HiddenFor(m => m.Home)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName, new { @class = "col-xs-2 control-label" })
+        <div class="col-xs-10">
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m2 => m2.FirstName) })
+            @Html.ValidationMessageFor(m => m.FirstName)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastName, new { @class = "col-xs-2 control-label" })
+        <div class="col-xs-10">
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = Html.DisplayNameFor(m2 => m2.LastName) })
+            @Html.ValidationMessageFor(m => m.LastName)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Identification, new { @class = "col-xs-2 control-label" })
+        <div class="col-xs-10">
+            @Html.TextBoxFor(m => m.Identification, new { @class = "form-control", placeholder = Html.DisplayNameFor(m2 => m2.Identification) })
+            @Html.ValidationMessageFor(m => m.Identification)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Gender, new { @class = "col-xs-2 control-label" })
+        <div class="col-xs-10">
+            @Html.EnumDropDownListFor(m => m.Gender, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Gender)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-10">
+            <button type="submit" class="btn btn-default">Add Person</button>
+        </div>
+    </div>
+}

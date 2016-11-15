@@ -1,12 +1,20 @@
 ﻿@model  HomeCrud.Core.Response.HomeDetailsResponse
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Details of Home";
 }
 
 <div class="row">
     <div class="col-xs-12">
-        <h2>Home: @Model.Name <a class="btn btn-default" href="@Url.Action("Update", "Homes", new { id = Model.Id })"><i class="glyphicon glyphicon-edit"></i></a></h2>
+        <h2>
+            Home: @Model.Name
+            <a class="btn btn-default" href="@Url.Action("Update", "Homes", new { id = Model.Id })">
+                <i class="glyphicon glyphicon-edit"></i>
+            </a>
+            <a class="btn btn-warning" href="@Url.Action("Delete", "Homes", new { id = Model.Id })">
+                <i class="glyphicon glyphicon-remove"></i>
+            </a>
+        </h2>
     </div>
 </div>
 
@@ -25,7 +33,7 @@
 
 <div class="row">
     <div class="col-xs-12">
-        <a class="btn btn-default" href="@Url.Action("Create", "People", new { id = Model.Id })">Add Person</a>
+        <a class="btn btn-default" href="@Url.Action("Create", "People", new { homeId = Model.Id })">Add Person</a>
     </div>
 </div>
 
@@ -61,9 +69,21 @@
                         <td>@item.FullName</td>
                         <td>@item.Gender</td>
                         <td>
-                            <a href="@Url.Action("Details", "Homes")" class="btn btn-default">Details</a>
-                            <a href="@Url.Action("Update", "Homes")" class="btn btn-default">Update</a>
-                            <a href="@Url.Action("Delete", "Homes")" class="btn btn-warning">Delete</a>
+                            <div style="display:flex; max-width:50%; justify-content:space-around;">
+                                <div>
+                                    <a href="@Url.Action("Details", "People", new { id=item.Id })" class="btn btn-default">Details</a>
+                                </div>
+                                <div>
+                                    <a href="@Url.Action("Update", "People", new { id=item.Id })" class="btn btn-default">Update</a>
+                                </div>
+                                <div>
+                                    @using (Html.BeginForm("Delete", "People", new { id = item.Id }, FormMethod.Post))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn btn-warning">Delete</button>
+                                    }
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 }

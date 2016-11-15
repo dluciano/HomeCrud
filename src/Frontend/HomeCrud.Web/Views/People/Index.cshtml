@@ -58,7 +58,7 @@
                                     @using (Html.BeginForm("Delete", "Homes", new { id = item.Id }, FormMethod.Post))
                                     {
                                         @Html.AntiForgeryToken()
-                                        <button type="submit" class="btn btn-warning">Delete</button>
+                                        <button type="submit" href="@Url.Action()" class="btn btn-warning">Delete</button>
                                     }
                                 </div>
 
