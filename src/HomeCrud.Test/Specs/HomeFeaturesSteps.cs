@@ -22,6 +22,16 @@ namespace HomeCrud.Test.Specs
             feature.Exec(request);
         }
 
+        [Given(@"I update the last home created with the following data")]
+        public void UpdateScenario(Table table)
+        {
+            var request = table.CreateInstance<UpdateHomeRequest>();
+            var entities = _container.GetInstance<IListHomeFeature>().Exec();
+            request.Id = entities.Last().Id;
+            var feature = _container.GetInstance<IUpdateHomeFeature>();
+            feature.Exec(request);
+        }
+
         [When(@"I list the last (.*) created homes")]
         public void WhenIListTheLastCreatedHomes(int count)
         {
@@ -30,13 +40,13 @@ namespace HomeCrud.Test.Specs
             lastNEntities = entities.Skip(entities.Count() - count);
         }
 
-        [Given(@"I update the last home created with the following data")]
-        public void UpdateScenario(Table table)
+        [When(@"I delete the last home")]
+        public void WhenIDeleteTheLastHome()
         {
-            var request = table.CreateInstance<UpdateHomeRequest>();
+            var request = new DeleteHomeRequest();
             var entities = _container.GetInstance<IListHomeFeature>().Exec();
             request.Id = entities.Last().Id;
-            var feature = _container.GetInstance<IUpdateHomeFeature>();
+            var feature = _container.GetInstance<IDeleteHomeFeature>();
             feature.Exec(request);
         }
 

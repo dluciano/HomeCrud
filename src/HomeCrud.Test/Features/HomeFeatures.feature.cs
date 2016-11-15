@@ -205,6 +205,56 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute(DisplayName="Delete Home")]
+        [Xunit.TraitAttribute("FeatureTitle", "Home Features")]
+        [Xunit.TraitAttribute("Description", "Delete Home")]
+        public virtual void DeleteHome()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete Home", ((string[])(null)));
+#line 45
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table9.AddRow(new string[] {
+                        "Name",
+                        "NotDelete\'s Home"});
+            table9.AddRow(new string[] {
+                        "Address",
+                        "Test Address"});
+#line 46
+ testRunner.Given("I create a home with the following data", ((string)(null)), table9, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table10.AddRow(new string[] {
+                        "Name",
+                        "Trump\'s Home"});
+            table10.AddRow(new string[] {
+                        "Address",
+                        "Test Address"});
+#line 50
+ testRunner.And("I create a home with the following data", ((string)(null)), table10, "And ");
+#line 54
+ testRunner.When("I delete the last home", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table11.AddRow(new string[] {
+                        "Name",
+                        "NotDelete\'s Home"});
+            table11.AddRow(new string[] {
+                        "Address",
+                        "Test Address"});
+#line 55
+ testRunner.Then("should exists a home with data", ((string)(null)), table11, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable

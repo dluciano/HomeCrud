@@ -4,5 +4,6 @@
         where TEntity : IEntity
     {
         void Add(TEntity entity);
+        void Delete(int id);
     }
 }

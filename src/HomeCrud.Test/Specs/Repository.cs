@@ -14,5 +14,7 @@
         }
 
         public void Add(TEntity entity) => _writeRepo.Add(entity);
+
+        public void Delete(int id) => _writeRepo.Delete(id);
     }
 }

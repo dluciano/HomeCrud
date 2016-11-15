@@ -41,3 +41,18 @@ Scenario: Update Home
 	Then the following homes should exists
 		| Name           | Address        |
 		| Hillary's Home | Test Address 3 |
+
+Scenario: Delete Home
+	Given I create a home with the following data
+		| Field   | Value            |
+		| Name    | NotDelete's Home |
+		| Address | Test Address     |
+	And I create a home with the following data
+		| Field   | Value        |
+		| Name    | Trump's Home |
+		| Address | Test Address |
+	When I delete the last home
+	Then should exists a home with data
+		| Field   | Value            |
+		| Name    | NotDelete's Home |
+		| Address | Test Address     |

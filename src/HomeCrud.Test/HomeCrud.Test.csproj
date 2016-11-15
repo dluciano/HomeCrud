@@ -100,10 +100,13 @@
     <Compile Include="Specs\CreateHomeRequest.cs" />
     <Compile Include="Specs\DataSource.cs" />
     <Compile Include="Specs\DataBaseContext.cs" />
+    <Compile Include="Specs\DeleteHomeFeature.cs" />
+    <Compile Include="Specs\DeleteHomeRequest.cs" />
     <Compile Include="Specs\Home.cs" />
     <Compile Include="Specs\HomeFeaturesSteps.cs" />
     <Compile Include="Specs\ICreateHomeFeature.cs" />
     <Compile Include="Specs\IDataSource.cs" />
+    <Compile Include="Specs\IDeleteHomeFeature.cs" />
     <Compile Include="Specs\IEntity.cs" />
     <Compile Include="Specs\IFromEntity.cs" />
     <Compile Include="Specs\IListHomeFeature.cs" />

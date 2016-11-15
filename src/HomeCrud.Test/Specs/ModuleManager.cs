@@ -20,7 +20,7 @@ namespace HomeCrud.Test.Specs
             Container.Register<ICreateHomeFeature, CreateHomeFeature>(Lifestyle.Scoped);
             Container.Register<IListHomeFeature, ListHomeFeature>(Lifestyle.Scoped);
             Container.Register<IUpdateHomeFeature, UpdateHomeFeature>(Lifestyle.Scoped);
-            
+            Container.Register<IDeleteHomeFeature, DeleteHomeFeature>(Lifestyle.Scoped);
         }
     }
 }

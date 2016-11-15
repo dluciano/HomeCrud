@@ -7,5 +7,6 @@ namespace HomeCrud.Test.Specs
         where TEntity : class, IEntity
     {
         void Add(TEntity entity);
+        void Delete(int id);
     }
 }

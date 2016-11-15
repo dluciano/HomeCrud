@@ -13,5 +13,8 @@
 
         public void Add(TEntity entity) =>
             _dataSource.Add(entity);
+
+        public void Delete(int id) =>
+            _dataSource.Delete(id);
     }
 }

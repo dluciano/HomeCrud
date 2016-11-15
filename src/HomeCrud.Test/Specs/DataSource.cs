@@ -23,7 +23,10 @@ namespace HomeCrud.Test.Specs
         public Expression Expression => efDataSet.Expression;
 
         public IQueryProvider Provider => efDataSet.Provider;
+
         public void Add(TEntity entity) => efDataSet.Add(entity);
+
+        public void Delete(int id) => efDataSet.Remove(efDataSet.Single(e => e.Id == id));
 
         public IEnumerator<TEntity> GetEnumerator() => efDataSet.GetEnumerator();
 
