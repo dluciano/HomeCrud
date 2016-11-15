@@ -10,14 +10,17 @@ namespace HomeCrud.Web.Controllers
         private readonly IListHomeFeature _listHomeFeature;
         private readonly ICreateHomeFeature _createFeature;
         private readonly IHomeDetailsFeature _detailsHomeFeature;
+        private readonly IUpdateHomeFeature _updateFeature;
 
         public HomesController(IListHomeFeature listHomeFeature,
             IHomeDetailsFeature detailsHomeFeature,
-            ICreateHomeFeature createFeature)
+            ICreateHomeFeature createFeature,
+            IUpdateHomeFeature updateFeature)
         {
             _listHomeFeature = listHomeFeature;
             _detailsHomeFeature = detailsHomeFeature;
             _createFeature = createFeature;
+            _updateFeature = updateFeature;
         }
 
         public ActionResult Index() => View(_listHomeFeature.Exec().ToList());
@@ -37,6 +40,19 @@ namespace HomeCrud.Web.Controllers
 
             _createFeature.Exec(request);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Update(int id) => View(new UpdateHomeRequest { Id = id });
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(UpdateHomeRequest request)
+        {
+            if (!ModelState.IsValid)
+                return View(request);
+
+            _updateFeature.Exec(request);
+            return RedirectToAction("Details", new { id = request.Id });
         }
     }
 }
