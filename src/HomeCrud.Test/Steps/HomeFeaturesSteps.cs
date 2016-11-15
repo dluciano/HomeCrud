@@ -1,4 +1,8 @@
-﻿using Should;
+﻿using HomeCrud.Core.Abstract;
+using HomeCrud.Core.Request;
+using HomeCrud.Core.Response;
+using HomeCrud.Test.Specs.Abstract;
+using Should;
 using System.Collections.Generic;
 using System.Linq;
 using TechTalk.SpecFlow;
