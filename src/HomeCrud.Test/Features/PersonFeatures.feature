@@ -24,3 +24,22 @@ Scenario: Add person to home
 		| Identification | 00128739281        |
 		| Home           | Person Peña's Home |
 	And the last home created should contain 1 person with id '00128739281'
+
+Scenario: List people
+	Given I add a person with the following data to the last added home
+		| Field          | Value        |
+		| FirstName      | Dawlin       |
+		| LastName       | Peña Luciano |
+		| Gender         | Male         |
+		| Identification | 00128739281  |
+	And I add a person with the following data to the last added home
+		| Field          | Value       |
+		| FirstName      | Pedro       |
+		| LastName       | Peña        |
+		| Gender         | Male        |
+		| Identification | 00138739281 |
+	When I list the people
+	Then should exists the following people
+		| FullName            | Gender | Identification | Home               |
+		| Dawlin Peña Luciano | Male   | 00128739281    | Person Peña's Home |
+		| Pedro Peña          | Male   | 00138739281    | Person Peña's Home |	

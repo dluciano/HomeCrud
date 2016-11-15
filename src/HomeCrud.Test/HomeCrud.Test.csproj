@@ -153,6 +153,7 @@
     <Compile Include="Steps\PersonDetailsResponse.cs" />
     <Compile Include="Steps\PersonFeaturesSteps.cs" />
     <Compile Include="Steps\PersonListFeature.cs" />
+    <Compile Include="Steps\PersonListRowResponse.cs" />
     <Compile Include="Steps\ReadRepository.cs" />
     <Compile Include="Steps\Repository.cs" />
     <Compile Include="Steps\ResponseExtensions.cs" />

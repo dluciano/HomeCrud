@@ -4,6 +4,6 @@ namespace HomeCrud.Test.Specs
 {
     public interface IPersonListFeature
     {
-        IEnumerable<Person> Exec();
+        IEnumerable<PersonListRowResponse> Exec();
     }
 }

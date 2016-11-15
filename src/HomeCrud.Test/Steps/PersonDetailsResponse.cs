@@ -19,7 +19,7 @@
                   LastName = person.LastName,
                   Gender = person.Gender,
                   Home = person.Home.Name,
-                  Identification = person.Identification
+                  Identification = person.Identification,
               };
         }
     }

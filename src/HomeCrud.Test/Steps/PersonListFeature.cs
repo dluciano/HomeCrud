@@ -1,17 +1,18 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using HomeCrud.Test.Steps;
+using System.Collections.Generic;
 
 namespace HomeCrud.Test.Specs
 {
     public class PersonListFeature : IPersonListFeature
     {
-        private readonly IReadRepository<Person> _persons;
+        private readonly IReadRepository<Person> _people;
 
-        public PersonListFeature(IReadRepository<Person> persons)
+        public PersonListFeature(IReadRepository<Person> people)
         {
-            _persons = persons;
+            _people = people;
         }
 
-        public IEnumerable<Person> Exec() => _persons.AsEnumerable();
+        IEnumerable<PersonListRowResponse> IPersonListFeature.Exec()=>
+            _people.AsRow();
     }
 }

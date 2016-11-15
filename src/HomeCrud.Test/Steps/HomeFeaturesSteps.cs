@@ -56,10 +56,8 @@ namespace HomeCrud.Test.Specs
         }
 
         [Then(@"the following home should exists")]
-        public void ThenTheFollowingHomeShouldExists(Table table)
-        {
+        public void ThenTheFollowingHomeShouldExists(Table table) =>
             table.CompareToInstance(_homeDetails);
-        }
 
         [Given(@"I add a person with the following data to that home")]
         public void GivenIAddAPersonWithTheFollowingDataToThatHome(Table table)

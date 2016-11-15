@@ -145,6 +145,76 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute(DisplayName="List people")]
+        [Xunit.TraitAttribute("FeatureTitle", "Person Features")]
+        [Xunit.TraitAttribute("Description", "List people")]
+        public virtual void ListPeople()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("List people", ((string[])(null)));
+#line 28
+this.ScenarioSetup(scenarioInfo);
+#line 6
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table4.AddRow(new string[] {
+                        "FirstName",
+                        "Dawlin"});
+            table4.AddRow(new string[] {
+                        "LastName",
+                        "Peña Luciano"});
+            table4.AddRow(new string[] {
+                        "Gender",
+                        "Male"});
+            table4.AddRow(new string[] {
+                        "Identification",
+                        "00128739281"});
+#line 29
+ testRunner.Given("I add a person with the following data to the last added home", ((string)(null)), table4, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table5.AddRow(new string[] {
+                        "FirstName",
+                        "Pedro"});
+            table5.AddRow(new string[] {
+                        "LastName",
+                        "Peña"});
+            table5.AddRow(new string[] {
+                        "Gender",
+                        "Male"});
+            table5.AddRow(new string[] {
+                        "Identification",
+                        "00138739281"});
+#line 35
+ testRunner.And("I add a person with the following data to the last added home", ((string)(null)), table5, "And ");
+#line 41
+ testRunner.When("I list the people", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "FullName",
+                        "Gender",
+                        "Identification",
+                        "Home"});
+            table6.AddRow(new string[] {
+                        "Dawlin Peña Luciano",
+                        "Male",
+                        "00128739281",
+                        "Person Peña\'s Home"});
+            table6.AddRow(new string[] {
+                        "Pedro Peña",
+                        "Male",
+                        "00138739281",
+                        "Person Peña\'s Home"});
+#line 42
+ testRunner.Then("should exists the following people", ((string)(null)), table6, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable
