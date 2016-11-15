@@ -1,0 +1,73 @@
+﻿@model  HomeCrud.Core.Response.HomeDetailsResponse
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Home: @Model.Name <a class="btn btn-default" href="@Url.Action("Update", "Homes", new { id = Model.Id })"><i class="glyphicon glyphicon-edit"></i></a></h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <dl>
+            <dt>@Html.DisplayNameFor(m => m.Id)</dt>
+            <dd>@Html.ValueFor(m => m.Id)</dd>
+            <dt>@Html.DisplayNameFor(m => m.Name)</dt>
+            <dd>@Html.ValueFor(m => m.Name)</dd>
+            <dt>@Html.DisplayNameFor(m => m.Address)</dt>
+            <dd>@Html.ValueFor(m => m.Address)</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <a class="btn btn-default" href="@Url.Action("Create", "People", new { id = Model.Id })">Add Person</a>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 15px;">
+    <div class="col-xs-12">
+        <table class="table table-bordered table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th colspan="4">
+                        @Html.DisplayNameFor(m => m.People)
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Full Name
+                    </th>
+                    <th>
+                        Gender
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.People)
+            {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.FullName</td>
+                        <td>@item.Gender</td>
+                        <td>
+                            <a href="@Url.Action("Details", "Homes")" class="btn btn-default">Details</a>
+                            <a href="@Url.Action("Update", "Homes")" class="btn btn-default">Update</a>
+                            <a href="@Url.Action("Delete", "Homes")" class="btn btn-warning">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

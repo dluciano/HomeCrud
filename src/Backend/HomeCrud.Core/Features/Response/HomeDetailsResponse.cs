@@ -6,6 +6,7 @@ namespace HomeCrud.Core.Response
 {
     public class HomeDetailsResponse
     {
+        public int Id { get; private set; }
         public string Name { get; private set; }
         public string Address { get; private set; }
         public IEnumerable<PersonDetailRow> People { get; private set; } = new List<PersonDetailRow>();
@@ -20,6 +21,7 @@ namespace HomeCrud.Core.Response
             {
                 var response = new HomeDetailsResponse
                 {
+                    Id = entity.Id,
                     Name = entity.Name,
                     Address = entity.Address,
                 };
