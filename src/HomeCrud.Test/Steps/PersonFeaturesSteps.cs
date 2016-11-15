@@ -30,6 +30,15 @@ namespace HomeCrud.Test.Specs
             feature.Exec(request);
         }
 
+        [Given(@"I update the last person details with the following data")]
+        public void GivenIUpdateTheLastPersonDetailsWithTheFollowingData(Table table)
+        {
+            var request = table.CreateInstance<UpdatePersonRequest>();
+            request.Id = _container.GetInstance<IPersonListFeature>().Exec().Last().Id;
+            var updateFeature = _container.GetInstance<IUpdatePersonFeature>();
+            updateFeature.Exec(request);
+        }
+
         [When(@"I list the people")]
         public void WhenIListThePeople() =>
             _personList = _container.GetInstance<IPersonListFeature>().Exec();
@@ -42,7 +51,6 @@ namespace HomeCrud.Test.Specs
             var detailFeature = _container.GetInstance<IPersonDetailFeature>();
             _personDetail = detailFeature.Exec(lastId);
         }
-
 
         [Then(@"the last person created should contain the following data")]
         public void ThenTheLastPersonCreatedShouldContainTheFollowingData(Table table)
