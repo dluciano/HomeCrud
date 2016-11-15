@@ -47,9 +47,13 @@
                         <td>@item.Address</td>
                         <td>@item.People</td>
                         <td>
-                            <a href="@Url.Action("Details", "Homes", new { id=item.Id})" class="btn btn-default">Details</a>
-                            <a href="@Url.Action("Update", "Homes", new { id=item.Id})" class="btn btn-default">Update</a>
-                            <a href="@Url.Action("Delete", "Homes", new { id=item.Id})" class="btn btn-warning">Delete</a>
+                            <a href="@Url.Action("Details", "Homes", new { id=item.Id })" class="btn btn-default">Details</a>
+                            <a href="@Url.Action("Update", "Homes", new { id=item.Id })" class="btn btn-default">Update</a>
+                            @using (Html.BeginForm("Delete", "Homes", new { id = item.Id }, FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                <button type="submit" href="@Url.Action()" class="btn btn-warning">Delete</button>
+                            }
                         </td>
                     </tr>
                 }
