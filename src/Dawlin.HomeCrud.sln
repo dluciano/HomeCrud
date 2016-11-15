@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.Entities", "HomeCr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.ModuleManager", "HomeCrud.ModuleManager\HomeCrud.ModuleManager.csproj", "{86449CD2-0053-46DE-92E9-D8B2F3F9E18B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.Web", "Frontend\HomeCrud.Web\HomeCrud.Web.csproj", "{40D05EBA-07E8-43F2-8031-1A929B93670E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{86449CD2-0053-46DE-92E9-D8B2F3F9E18B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86449CD2-0053-46DE-92E9-D8B2F3F9E18B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86449CD2-0053-46DE-92E9-D8B2F3F9E18B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40D05EBA-07E8-43F2-8031-1A929B93670E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40D05EBA-07E8-43F2-8031-1A929B93670E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40D05EBA-07E8-43F2-8031-1A929B93670E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40D05EBA-07E8-43F2-8031-1A929B93670E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +66,6 @@ Global
 		{F1C067DD-A393-4BA5-94E0-7C2C3C675DF4} = {7FC249D6-1879-43A2-A769-274C565DF381}
 		{0FFE093F-6E76-44C6-8ED7-D76DE7EADE19} = {7FC249D6-1879-43A2-A769-274C565DF381}
 		{86449CD2-0053-46DE-92E9-D8B2F3F9E18B} = {7FC249D6-1879-43A2-A769-274C565DF381}
+		{40D05EBA-07E8-43F2-8031-1A929B93670E} = {0DA07F52-2124-4684-B992-C127D7B4D4C5}
 	EndGlobalSection
 EndGlobal
