@@ -1,7 +1,7 @@
 ﻿using HomeCrud.Core.Abstract;
 using HomeCrud.Core.Impl;
 using HomeCrud.DA.Common;
-using HomeCrud.Test.Specs;
+using HomeCrud.DA.EntityFramework;
 using SimpleInjector;
 using SimpleInjector.Extensions.LifetimeScoping;
 using System.Data.Entity;
@@ -12,9 +12,9 @@ namespace HomeCrud.Modules
     {
         public Container Container { get; } = new Container();
 
-        public ModuleManager()
+        public ModuleManager(ScopedLifestyle scope = null)
         {
-            Container.Options.DefaultScopedLifestyle = new LifetimeScopeLifestyle();
+            Container.Options.DefaultScopedLifestyle = scope ?? new LifetimeScopeLifestyle();
 
             Container.Register<DbContext, DataBaseContext>(Lifestyle.Scoped);
             Container.Register(typeof(IDataSource<>), typeof(EntityFrameworkDataSource<>), Lifestyle.Scoped);

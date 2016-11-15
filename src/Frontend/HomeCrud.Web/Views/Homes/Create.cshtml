@@ -1,4 +1,6 @@
-﻿@{
+﻿@model  HomeCrud.Core.Request.CreateHomeRequest
+
+@{
     ViewBag.Title = "Create";
 }
 
@@ -9,11 +11,24 @@
     @Html.AntiForgeryToken();
     @Html.ValidationSummary(true);
     <div class="form-group">
-        @Html.LabelFor(m=>m.);
-        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-        <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+        @Html.LabelFor(m => m.Name, new { @class = "col-xs-2 control-label" })
+        <div class="col-xs-10">
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = Html.DisplayNameFor(m2 => m2.Name) })
+            @Html.ValidationMessageFor(m => m.Name)
         </div>
     </div>
 
+    <div class="form-group">
+        @Html.LabelFor(m => m.Address, new { @class = "col-xs-2 control-label" })
+        <div class="col-xs-10">
+            @Html.TextBoxFor(m => m.Address, new { @class = "form-control", placeholder = Html.DisplayNameFor(m2 => m2.Address) })
+            @Html.ValidationMessageFor(m => m.Address)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-10">
+            <button type="submit" class="btn btn-default">Create</button>
+        </div>
+    </div>
 }

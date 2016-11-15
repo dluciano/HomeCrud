@@ -1,11 +1,8 @@
-namespace HomeCrud.Test.Migrations
+namespace HomeCrud.DA.EntityFramework.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<HomeCrud.Test.Specs.DataBaseContext>
+    public sealed class Configuration : DbMigrationsConfiguration<DataBaseContext>
     {
         public Configuration()
         {
@@ -13,7 +10,7 @@ namespace HomeCrud.Test.Migrations
             ContextKey = "HomeCrud.Test.Specs.DataBaseContext";
         }
 
-        protected override void Seed(HomeCrud.Test.Specs.DataBaseContext context)
+        protected override void Seed(DataBaseContext context)
         {
         }
     }

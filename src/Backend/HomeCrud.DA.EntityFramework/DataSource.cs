@@ -7,7 +7,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace HomeCrud.Test.Specs
+namespace HomeCrud.DA.EntityFramework
 {
     public class EntityFrameworkDataSource<TEntity> :
         IDataSource<TEntity>

@@ -52,31 +52,12 @@
     <Compile Include="DataBaseContext.cs" />
     <Compile Include="DataSource.cs" />
     <Compile Include="EntityFrameworkUnitOfWork.cs" />
-    <Compile Include="Migrations\201611142348392_0.cs" />
-    <Compile Include="Migrations\201611142348392_0.Designer.cs">
-      <DependentUpon>201611142348392_0.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611150030308_addingNameAdressToHome.cs" />
-    <Compile Include="Migrations\201611150030308_addingNameAdressToHome.Designer.cs">
-      <DependentUpon>201611150030308_addingNameAdressToHome.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611150211290_Adding person entity.cs" />
-    <Compile Include="Migrations\201611150211290_Adding person entity.Designer.cs">
-      <DependentUpon>201611150211290_Adding person entity.cs</DependentUpon>
+    <Compile Include="Migrations\201611152052069_0.cs" />
+    <Compile Include="Migrations\201611152052069_0.Designer.cs">
+      <DependentUpon>201611152052069_0.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611142348392_0.resx">
-      <DependentUpon>201611142348392_0.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611150030308_addingNameAdressToHome.resx">
-      <DependentUpon>201611150030308_addingNameAdressToHome.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611150211290_Adding person entity.resx">
-      <DependentUpon>201611150211290_Adding person entity.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -91,6 +72,11 @@
       <Project>{0FFE093F-6E76-44C6-8ED7-D76DE7EADE19}</Project>
       <Name>HomeCrud.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611152052069_0.resx">
+      <DependentUpon>201611152052069_0.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

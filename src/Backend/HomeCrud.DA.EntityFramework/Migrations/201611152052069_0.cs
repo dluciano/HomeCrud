@@ -1,12 +1,22 @@
-namespace HomeCrud.Test.Migrations
+namespace HomeCrud.DA.EntityFramework.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Addingpersonentity : DbMigration
+    public partial class _0 : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Homes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Address = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
             CreateTable(
                 "dbo.People",
                 c => new
@@ -29,6 +39,7 @@ namespace HomeCrud.Test.Migrations
             DropForeignKey("dbo.People", "Home_Id", "dbo.Homes");
             DropIndex("dbo.People", new[] { "Home_Id" });
             DropTable("dbo.People");
+            DropTable("dbo.Homes");
         }
     }
 }

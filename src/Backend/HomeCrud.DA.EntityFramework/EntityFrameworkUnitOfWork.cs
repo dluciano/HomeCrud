@@ -1,7 +1,7 @@
 ﻿using HomeCrud.DA.Common;
 using System.Data.Entity;
 
-namespace HomeCrud.Test.Specs
+namespace HomeCrud.DA.EntityFramework
 {
     public class EntityFrameworkUnitOfWork : IUnitOfWork
     {
