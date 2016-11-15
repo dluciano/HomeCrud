@@ -5,5 +5,6 @@ namespace HomeCrud.Test.Specs
     public class DataBaseContext : DbContext
     {
         public IDbSet<Home> Homes { get; }
+        public IDbSet<Person> Persons { get; }
     }
 }

@@ -72,12 +72,12 @@ namespace HomeCrud.Test.Features
                         "Value"});
             table1.AddRow(new string[] {
                         "Name",
-                        "Peña\'s Home"});
+                        "Person Peña\'s Home"});
             table1.AddRow(new string[] {
                         "Address",
                         "Test Address"});
 #line 7
- testRunner.Given("I create one home with the following data", ((string)(null)), table1, "Given ");
+  testRunner.Given("I create one home with the following data", ((string)(null)), table1, "Given ");
 #line hidden
         }
         
@@ -114,10 +114,10 @@ this.ScenarioSetup(scenarioInfo);
                         "Gender",
                         "Male"});
             table2.AddRow(new string[] {
-                        "Id",
+                        "Identification",
                         "00128739281"});
 #line 13
- testRunner.When("I add a person to the last added home, with the following data", ((string)(null)), table2, "When ");
+ testRunner.When("I add a person with the following data to the last added home", ((string)(null)), table2, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -132,11 +132,14 @@ this.ScenarioSetup(scenarioInfo);
                         "Gender",
                         "Male"});
             table3.AddRow(new string[] {
-                        "Id",
+                        "Identification",
                         "00128739281"});
+            table3.AddRow(new string[] {
+                        "Home",
+                        "Person Peña\'s Home"});
 #line 19
  testRunner.Then("the last person created should contain the following data", ((string)(null)), table3, "Then ");
-#line 25
+#line 26
  testRunner.And("the last home created should contain a person with id \'00128739281\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

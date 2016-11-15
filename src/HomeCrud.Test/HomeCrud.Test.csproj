@@ -98,23 +98,33 @@
     <Compile Include="Migrations\201611150030308_addingNameAdressToHome.Designer.cs">
       <DependentUpon>201611150030308_addingNameAdressToHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611150211290_Adding person entity.cs" />
+    <Compile Include="Migrations\201611150211290_Adding person entity.Designer.cs">
+      <DependentUpon>201611150211290_Adding person entity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryExtensions.cs" />
     <Compile Include="Steps\CreateHomeFeature.cs" />
     <Compile Include="Steps\CreateHomeRequest.cs" />
+    <Compile Include="Steps\CreatePersonFeature.cs" />
+    <Compile Include="Steps\CreatePersonRequest.cs" />
     <Compile Include="Steps\DataSource.cs" />
     <Compile Include="Steps\DataBaseContext.cs" />
     <Compile Include="Steps\DeleteHomeFeature.cs" />
     <Compile Include="Steps\DeleteHomeRequest.cs" />
+    <Compile Include="Steps\Gender.cs" />
     <Compile Include="Steps\Home.cs" />
     <Compile Include="Steps\HomeFeaturesSteps.cs" />
     <Compile Include="Steps\ICreateHomeFeature.cs" />
+    <Compile Include="Steps\ICreatePersonFeature.cs" />
     <Compile Include="Steps\IDataSource.cs" />
     <Compile Include="Steps\IDeleteHomeFeature.cs" />
     <Compile Include="Steps\IEntity.cs" />
-    <Compile Include="Steps\IFromEntity.cs" />
+    <Compile Include="Steps\IFactory.cs" />
     <Compile Include="Steps\IListHomeFeature.cs" />
+    <Compile Include="Steps\IPersonDetailFeature.cs" />
+    <Compile Include="Steps\IPersonListFeature.cs" />
     <Compile Include="Steps\IReadRepository.cs" />
     <Compile Include="Steps\IRepository.cs" />
     <Compile Include="Steps\IToEntity.cs" />
@@ -123,7 +133,11 @@
     <Compile Include="Steps\IWriteRepository.cs" />
     <Compile Include="Steps\ListHomeFeature.cs" />
     <Compile Include="Steps\ModuleManager.cs" />
+    <Compile Include="Steps\Person.cs" />
+    <Compile Include="Steps\PersonDetailFeature.cs" />
+    <Compile Include="Steps\PersonDetailsResponse.cs" />
     <Compile Include="Steps\PersonFeaturesSteps.cs" />
+    <Compile Include="Steps\PersonListFeature.cs" />
     <Compile Include="Steps\ReadRepository.cs" />
     <Compile Include="Steps\Repository.cs" />
     <Compile Include="Steps\UnitOfWork.cs" />
@@ -149,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611150030308_addingNameAdressToHome.resx">
       <DependentUpon>201611150030308_addingNameAdressToHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611150211290_Adding person entity.resx">
+      <DependentUpon>201611150211290_Adding person entity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

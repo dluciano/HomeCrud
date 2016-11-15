@@ -21,6 +21,9 @@ namespace HomeCrud.Test.Specs
             Container.Register<IListHomeFeature, ListHomeFeature>(Lifestyle.Scoped);
             Container.Register<IUpdateHomeFeature, UpdateHomeFeature>(Lifestyle.Scoped);
             Container.Register<IDeleteHomeFeature, DeleteHomeFeature>(Lifestyle.Scoped);
+            Container.Register<ICreatePersonFeature, CreatePersonFeature>(Lifestyle.Scoped);
+            Container.Register<IPersonListFeature, PersonListFeature>(Lifestyle.Scoped);
+            Container.Register<IPersonDetailFeature, PersonDetailFeature>(Lifestyle.Scoped);
         }
     }
 }

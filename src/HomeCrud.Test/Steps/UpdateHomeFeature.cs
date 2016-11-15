@@ -14,7 +14,7 @@
 
         public void Exec(UpdateHomeRequest request)
         {
-            request.FromEntity(_repo.ById(request.Id));
+            request.IFillEntity(_repo.ById(request.Id));
             _db.SaveChanges();
         }
     }
