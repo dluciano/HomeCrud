@@ -10,6 +10,7 @@ namespace HomeCrud.Test.Specs
     public class PersonFeaturesSteps : BaseSteps
     {
         private IEnumerable<PersonListRowResponse> _personList;
+        private PersonDetailsResponse _personDetail;
 
         [Given(@"I create one home with the following data")]
         public void CreateHome(Table table)
@@ -33,6 +34,16 @@ namespace HomeCrud.Test.Specs
         public void WhenIListThePeople() =>
             _personList = _container.GetInstance<IPersonListFeature>().Exec();
 
+        [When(@"I access the last person details")]
+        public void WhenIAccessTheLastPersonDetails()
+        {
+            var listFeature = _container.GetInstance<IPersonListFeature>();
+            var lastId = listFeature.Exec().Last().Id;
+            var detailFeature = _container.GetInstance<IPersonDetailFeature>();
+            _personDetail = detailFeature.Exec(lastId);
+        }
+
+
         [Then(@"the last person created should contain the following data")]
         public void ThenTheLastPersonCreatedShouldContainTheFollowingData(Table table)
         {
@@ -53,5 +64,10 @@ namespace HomeCrud.Test.Specs
         [Then(@"should exists the following people")]
         public void ThenShouldExistsTheFollowingPeople(Table table) =>
             table.CompareToSet(_personList);
+
+        [Then(@"the person details should contains the following data")]
+        public void ThenThePersonDetailsShouldContainsTheFollowingData(Table table) =>
+            table.CompareToInstance(_personDetail);
+
     }
 }

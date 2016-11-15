@@ -215,6 +215,61 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute(DisplayName="Person details")]
+        [Xunit.TraitAttribute("FeatureTitle", "Person Features")]
+        [Xunit.TraitAttribute("Description", "Person details")]
+        public virtual void PersonDetails()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person details", ((string[])(null)));
+#line 47
+this.ScenarioSetup(scenarioInfo);
+#line 6
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table7.AddRow(new string[] {
+                        "FirstName",
+                        "Dawlin"});
+            table7.AddRow(new string[] {
+                        "LastName",
+                        "Peña Luciano"});
+            table7.AddRow(new string[] {
+                        "Gender",
+                        "Male"});
+            table7.AddRow(new string[] {
+                        "Identification",
+                        "00128739281"});
+#line 48
+ testRunner.Given("I add a person with the following data to the last added home", ((string)(null)), table7, "Given ");
+#line 54
+ testRunner.When("I access the last person details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table8.AddRow(new string[] {
+                        "FirstName",
+                        "Dawlin"});
+            table8.AddRow(new string[] {
+                        "LastName",
+                        "Peña Luciano"});
+            table8.AddRow(new string[] {
+                        "Gender",
+                        "Male"});
+            table8.AddRow(new string[] {
+                        "Identification",
+                        "00128739281"});
+            table8.AddRow(new string[] {
+                        "Home",
+                        "Person Peña\'s Home"});
+#line 55
+ testRunner.Then("the person details should contains the following data", ((string)(null)), table8, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable

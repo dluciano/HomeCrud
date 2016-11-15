@@ -43,3 +43,19 @@ Scenario: List people
 		| FullName            | Gender | Identification | Home               |
 		| Dawlin Peña Luciano | Male   | 00128739281    | Person Peña's Home |
 		| Pedro Peña          | Male   | 00138739281    | Person Peña's Home |	
+
+Scenario: Person details
+	Given I add a person with the following data to the last added home
+		| Field          | Value        |
+		| FirstName      | Dawlin       |
+		| LastName       | Peña Luciano |
+		| Gender         | Male         |
+		| Identification | 00128739281  |
+	When I access the last person details
+	Then the person details should contains the following data
+		| Field          | Value              |
+		| FirstName      | Dawlin             |
+		| LastName       | Peña Luciano       |
+		| Gender         | Male               |
+		| Identification | 00128739281        |
+		| Home           | Person Peña's Home |
