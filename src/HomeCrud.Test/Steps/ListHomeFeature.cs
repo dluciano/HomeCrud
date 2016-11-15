@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using HomeCrud.Test.Steps;
+using System.Collections.Generic;
 
 namespace HomeCrud.Test.Specs
 {
@@ -12,7 +12,7 @@ namespace HomeCrud.Test.Specs
             _homes = homes;
         }
 
-        public IEnumerable<Home> Exec() =>
-            _homes.AsEnumerable();
+        IEnumerable<HomeRowResponse> IListHomeFeature.Exec() =>
+            _homes.AsRowCollection();
     }
 }

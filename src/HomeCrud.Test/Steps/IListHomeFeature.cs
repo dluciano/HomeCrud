@@ -4,6 +4,6 @@ namespace HomeCrud.Test.Specs
 {
     public interface IListHomeFeature
     {
-        IEnumerable<Home> Exec();
+        IEnumerable<HomeRowResponse> Exec();
     }
 }

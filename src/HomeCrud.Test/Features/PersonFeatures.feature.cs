@@ -140,7 +140,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 19
  testRunner.Then("the last person created should contain the following data", ((string)(null)), table3, "Then ");
 #line 26
- testRunner.And("the last home created should contain a person with id \'00128739281\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the last home created should contain 1 person with id \'00128739281\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

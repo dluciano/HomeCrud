@@ -1,6 +1,4 @@
-﻿using SimpleInjector;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -8,11 +6,8 @@ using TechTalk.SpecFlow.Assist;
 namespace HomeCrud.Test.Specs
 {
     [Binding]
-    public class HomeFeaturesSteps : IDisposable
+    public class HomeFeaturesSteps : BaseSteps
     {
-        private readonly Scope _container = new ModuleManager().Container.BeginLifetimeScope();
-        private IEnumerable<Home> lastNEntities;
-
         [Given(@"I create a home with the following data")]
         [When(@"I create a home with the following data")]
         public void CreateHome(Table table)
@@ -63,16 +58,6 @@ namespace HomeCrud.Test.Specs
         public void FollowingHomesShouldExists(Table table) =>
             table.CompareToSet(lastNEntities);
 
-        void IDisposable.Dispose() =>
-            Dispose(true);
-
-        public void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                _container.Dispose();
-                GC.Collect();
-            }
-        }
+        private IEnumerable<HomeRowResponse> lastNEntities;
     }
 }

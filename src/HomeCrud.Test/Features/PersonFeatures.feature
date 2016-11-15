@@ -23,4 +23,4 @@ Scenario: Add person to home
 		| Gender         | Male               |
 		| Identification | 00128739281        |
 		| Home           | Person Peña's Home |
-	And the last home created should contain a person with id '00128739281'
+	And the last home created should contain 1 person with id '00128739281'

@@ -1,5 +1,4 @@
-﻿using SimpleInjector;
-using System;
+﻿using Should;
 using System.Linq;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -7,10 +6,8 @@ using TechTalk.SpecFlow.Assist;
 namespace HomeCrud.Test.Specs
 {
     [Binding]
-    public class PersonFeaturesSteps : IDisposable
+    public class PersonFeaturesSteps : BaseSteps
     {
-        private readonly Scope _container = new ModuleManager().Container.BeginLifetimeScope();
-
         [Given(@"I create one home with the following data")]
         public void CreateHome(Table table)
         {
@@ -38,21 +35,11 @@ namespace HomeCrud.Test.Specs
             table.CompareToInstance(e);
         }
 
-        [Then(@"the last home created should contain a person with id '(.*)'")]
-        public void ThenTheLastHomeCreatedShouldContainAPersonWithId(int p0)
+        [Then(@"the last home created should contain (.*) person with id '(.*)'")]
+        public void HomeShouldContainOnePersonWithId(int count, string id)
         {
-        }
-
-        void IDisposable.Dispose() =>
-           Dispose(true);
-
-        public void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                _container.Dispose();
-                GC.Collect();
-            }
+            var listFeature = _container.GetInstance<IListHomeFeature>();
+            listFeature.Exec().Last().Persons.ShouldEqual(count);
         }
     }
 }

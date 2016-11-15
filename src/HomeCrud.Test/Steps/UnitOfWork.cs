@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 
 namespace HomeCrud.Test.Specs
 {
@@ -11,7 +12,26 @@ namespace HomeCrud.Test.Specs
             _context = context;
         }
 
+        public ITransaction BeginTrans() =>
+            new Transaction(_context.Database.BeginTransaction());
+
         public void SaveChanges() =>
             _context.SaveChanges();
+
+        private class Transaction : ITransaction
+        {
+            private DbContextTransaction _dbTrans;
+
+            public Transaction(DbContextTransaction dbTrans)
+            {
+                _dbTrans = dbTrans;
+            }
+
+            public void Dispose() =>
+                _dbTrans.Dispose();
+
+            public void Rollback() =>
+                _dbTrans.Rollback();
+        }
     }
 }

@@ -3,5 +3,6 @@
     public interface IUnitOfWork
     {
         void SaveChanges();
+        ITransaction BeginTrans();
     }
 }
