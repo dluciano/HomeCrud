@@ -52,6 +52,27 @@ namespace HomeCrud.Test.Specs
             _personDetail = detailFeature.Exec(lastId);
         }
 
+        [When(@"I delete the last added person")]
+        public void WhenIDeleteTheLastAddedPerson()
+        {
+            var request = new DeletePersonRequest();
+            request.PersonId = _container.GetInstance<IPersonListFeature>().Exec().Last().Id;
+            var deleteFeature = _container.GetInstance<IDeletePersonFeature>();
+            deleteFeature.Exec(request);
+        }
+
+        [Then(@"the last home added should contain (.*) person")]
+        public void ThenTheLastHomeAddedShouldContainPerson(int count) =>
+            _container.GetInstance<IListHomeFeature>().Exec().Last().Persons.ShouldEqual(count);
+
+        [Then(@"the last person data should contain the following data")]
+        public void ThenTheLastPersonDataShouldContainTheFollowingData(Table table)
+        {
+            var lastPerson = _container.GetInstance<IPersonListFeature>().Exec().Last();
+            table.CompareToInstance(lastPerson);
+            lastPerson.Home.ShouldEqual(_container.GetInstance<IListHomeFeature>().Exec().Last().Name);
+        }
+
         [Then(@"the last person created should contain the following data")]
         public void ThenTheLastPersonCreatedShouldContainTheFollowingData(Table table)
         {

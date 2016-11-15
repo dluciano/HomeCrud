@@ -81,3 +81,24 @@ Scenario: Update person details
 		| Gender         | Female             |
 		| Identification | 20128739281        |
 		| Home           | Person Peña's Home |
+
+Scenario: Delete person
+	Given I add a person with the following data to the last added home
+		| Field          | Value        |
+		| FirstName      | Dawlin       |
+		| LastName       | Peña Luciano |
+		| Gender         | Male         |
+		| Identification | 00128739281  |
+	And I add a person with the following data to the last added home
+		| Field          | Value       |
+		| FirstName      | Berto       |
+		| LastName       | Ortics      |
+		| Gender         | Female      |
+		| Identification | 00128339281 |
+	When I delete the last added person
+	Then the last home added should contain 1 person
+	And the last person data should contain the following data
+		| Field          | Value               |
+		| FullName       | Dawlin Peña Luciano |
+		| Gender         | Male                |
+		| Identification | 00128739281         |

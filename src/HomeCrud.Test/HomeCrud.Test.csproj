@@ -123,6 +123,8 @@
     <Compile Include="Steps\DataBaseContext.cs" />
     <Compile Include="Steps\DeleteHomeFeature.cs" />
     <Compile Include="Steps\DeleteHomeRequest.cs" />
+    <Compile Include="Steps\DeletePersonFeature.cs" />
+    <Compile Include="Steps\DeletePersonRequest.cs" />
     <Compile Include="Steps\Gender.cs" />
     <Compile Include="Steps\Home.cs" />
     <Compile Include="Steps\HomeDetailsFeature.cs" />
@@ -133,6 +135,7 @@
     <Compile Include="Steps\ICreatePersonFeature.cs" />
     <Compile Include="Steps\IDataSource.cs" />
     <Compile Include="Steps\IDeleteHomeFeature.cs" />
+    <Compile Include="Steps\IDeletePersonFeature.cs" />
     <Compile Include="Steps\IEntity.cs" />
     <Compile Include="Steps\IFactory.cs" />
     <Compile Include="Steps\IHomeDetailsFeature.cs" />
