@@ -1,0 +1,51 @@
+﻿@model  IEnumerable<HomeCrud.Core.Response.HomeRowResponse>
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Homes</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <a class="btn btn-default" href="@Url.Action("Create", "Homes")">Create New Home</a>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 5px;">
+    <div class="col-xs-12">
+        <table class="table table-bordered table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Address)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Persons)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.Address</td>
+                        <td>@item.Persons</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

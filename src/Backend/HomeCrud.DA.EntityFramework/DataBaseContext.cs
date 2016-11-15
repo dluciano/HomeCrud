@@ -10,7 +10,8 @@ namespace HomeCrud.DA.EntityFramework
         {
 
         }
-        public IDbSet<Home> Homes { get; }
-        public IDbSet<Person> Persons { get; }
+
+        public IDbSet<Home> Homes => Set<Home>();
+        public IDbSet<Person> Persons => Set<Person>();
     }
 }

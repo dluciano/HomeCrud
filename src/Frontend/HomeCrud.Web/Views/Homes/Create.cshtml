@@ -4,7 +4,11 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create Home</h2>
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Create Home</h2>
+    </div>
+</div>
 
 @using (Html.BeginForm("Create", "Homes", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal" }))
 {
