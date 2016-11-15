@@ -67,7 +67,7 @@ namespace HomeCrud.Test.Specs
 
         [Then(@"the last home added should contain (.*) person")]
         public void ThenTheLastHomeAddedShouldContainPerson(int count) =>
-            _container.GetInstance<IListHomeFeature>().Exec().Last().Persons.ShouldEqual(count);
+            _container.GetInstance<IListHomeFeature>().Exec().Last().People.ShouldEqual(count);
 
         [Then(@"the last person data should contain the following data")]
         public void ThenTheLastPersonDataShouldContainTheFollowingData(Table table)
@@ -91,7 +91,7 @@ namespace HomeCrud.Test.Specs
         public void HomeShouldContainOnePersonWithId(int count, string id)
         {
             var listFeature = _container.GetInstance<IListHomeFeature>();
-            listFeature.Exec().Last().Persons.ShouldEqual(count);
+            listFeature.Exec().Last().People.ShouldEqual(count);
         }
 
         [Then(@"should exists the following people")]

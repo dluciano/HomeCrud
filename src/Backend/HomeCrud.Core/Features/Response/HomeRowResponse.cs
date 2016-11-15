@@ -5,7 +5,7 @@ namespace HomeCrud.Core.Response
     public class HomeRowResponse
     {
         public int Id { get; private set; }
-        public int Persons { get; private set; }
+        public int People { get; private set; }
         public string Name { get; private set; }
         public string Address { get; private set; }
 
@@ -19,7 +19,7 @@ namespace HomeCrud.Core.Response
                 new HomeRowResponse
                 {
                     Id = entity.Id,
-                    Persons = entity.People.Count,
+                    People = entity.People.Count,
                     Name = entity.Name,
                     Address = entity.Address
                 };
