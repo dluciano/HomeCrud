@@ -89,6 +89,10 @@
     <Compile Include="Migrations\201611142348392_0.Designer.cs">
       <DependentUpon>201611142348392_0.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611150030308_addingNameAdressToHome.cs" />
+    <Compile Include="Migrations\201611150030308_addingNameAdressToHome.Designer.cs">
+      <DependentUpon>201611150030308_addingNameAdressToHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryExtensions.cs" />
@@ -101,10 +105,14 @@
     <Compile Include="Specs\ICreateHomeFeature.cs" />
     <Compile Include="Specs\IDataSource.cs" />
     <Compile Include="Specs\IEntity.cs" />
+    <Compile Include="Specs\IListHomeFeature.cs" />
+    <Compile Include="Specs\IReadRepository.cs" />
     <Compile Include="Specs\IToEntity.cs" />
     <Compile Include="Specs\IUnitOfWork.cs" />
     <Compile Include="Specs\IWriteRepository.cs" />
+    <Compile Include="Specs\ListHomeFeature.cs" />
     <Compile Include="Specs\ModuleManager.cs" />
+    <Compile Include="Specs\ReadRepository.cs" />
     <Compile Include="Specs\UnitOfWork.cs" />
     <Compile Include="Specs\WriteRepository.cs" />
   </ItemGroup>
@@ -119,6 +127,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611142348392_0.resx">
       <DependentUpon>201611142348392_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611150030308_addingNameAdressToHome.resx">
+      <DependentUpon>201611150030308_addingNameAdressToHome.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

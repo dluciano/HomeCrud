@@ -1,5 +1,6 @@
 ﻿using SimpleInjector;
 using System;
+using System.Linq;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -18,17 +19,17 @@ namespace HomeCrud.Test.Specs
             feature.Exec(request);
         }
 
-
         [Then(@"should exists a home with data")]
         public void ThenShouldExistsAHomeWithData(Table table)
         {
-            table.CreateInstance<Home>();
+            var listFeature = _container.GetInstance<IListHomeFeature>();
+            var entities = listFeature.Exec();
+            var last = entities.Last();
+            table.CompareToInstance(last);
         }
 
-        void IDisposable.Dispose()
-        {
+        void IDisposable.Dispose() =>
             Dispose(true);
-        }
 
         public void Dispose(bool disposing)
         {
