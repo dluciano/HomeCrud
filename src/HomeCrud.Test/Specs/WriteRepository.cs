@@ -2,7 +2,7 @@
 {
     public class WriteRepository<TEntity>
         : IWriteRepository<TEntity>
-        where TEntity : IEntity
+        where TEntity : class, IEntity
     {
         private readonly IDataSource<TEntity> _dataSource;
 

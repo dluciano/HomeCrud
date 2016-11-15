@@ -105,15 +105,21 @@
     <Compile Include="Specs\ICreateHomeFeature.cs" />
     <Compile Include="Specs\IDataSource.cs" />
     <Compile Include="Specs\IEntity.cs" />
+    <Compile Include="Specs\IFromEntity.cs" />
     <Compile Include="Specs\IListHomeFeature.cs" />
     <Compile Include="Specs\IReadRepository.cs" />
+    <Compile Include="Specs\IRepository.cs" />
     <Compile Include="Specs\IToEntity.cs" />
     <Compile Include="Specs\IUnitOfWork.cs" />
+    <Compile Include="Specs\IUpdateHomeFeature.cs" />
     <Compile Include="Specs\IWriteRepository.cs" />
     <Compile Include="Specs\ListHomeFeature.cs" />
     <Compile Include="Specs\ModuleManager.cs" />
     <Compile Include="Specs\ReadRepository.cs" />
+    <Compile Include="Specs\Repository.cs" />
     <Compile Include="Specs\UnitOfWork.cs" />
+    <Compile Include="Specs\UpdateHomeFeature.cs" />
+    <Compile Include="Specs\UpdateHomeRequest.cs" />
     <Compile Include="Specs\WriteRepository.cs" />
   </ItemGroup>
   <ItemGroup>

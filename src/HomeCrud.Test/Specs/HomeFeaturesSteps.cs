@@ -30,6 +30,16 @@ namespace HomeCrud.Test.Specs
             lastNEntities = entities.Skip(entities.Count() - count);
         }
 
+        [Given(@"I update the last home created with the following data")]
+        public void UpdateScenario(Table table)
+        {
+            var request = table.CreateInstance<UpdateHomeRequest>();
+            var entities = _container.GetInstance<IListHomeFeature>().Exec();
+            request.Id = entities.Last().Id;
+            var feature = _container.GetInstance<IUpdateHomeFeature>();
+            feature.Exec(request);
+        }
+
         [Then(@"should exists a home with data")]
         public void LastShouldBeEqulsTo(Table table)
         {

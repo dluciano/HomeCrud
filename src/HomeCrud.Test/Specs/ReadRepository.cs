@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -10,20 +9,20 @@ namespace HomeCrud.Test.Specs
     public class ReadRepository<TEntity> : IReadRepository<TEntity>
         where TEntity : class, IEntity
     {
-        private readonly IDbSet<TEntity> _dbSet;
+        private readonly IDataSource<TEntity> _dataSource;
 
-        public ReadRepository(DbContext context)
+        public ReadRepository(IDataSource<TEntity> dataSource)
         {
-            _dbSet = context.Set<TEntity>();
+            _dataSource = dataSource;
         }
 
-        public Type ElementType => _dbSet.ElementType;
+        public Type ElementType => _dataSource.ElementType;
 
-        public Expression Expression => _dbSet.Expression;
+        public Expression Expression => _dataSource.Expression;
 
-        public IQueryProvider Provider => _dbSet.Provider;
+        public IQueryProvider Provider => _dataSource.Provider;
 
-        public IEnumerator<TEntity> GetEnumerator() => _dbSet.GetEnumerator();
+        public IEnumerator<TEntity> GetEnumerator() => _dataSource.GetEnumerator();
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
