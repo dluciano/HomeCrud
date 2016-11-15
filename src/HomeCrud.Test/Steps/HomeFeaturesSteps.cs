@@ -85,6 +85,14 @@ namespace HomeCrud.Test.Specs
             table.CompareToInstance(last);
         }
 
+        [Then(@"the count of homes should be (.*)")]
+        public void ThenTheCountOfHomesShouldBe(int count) =>
+            _container.GetInstance<IListHomeFeature>().Exec().Count().ShouldEqual(count);
+
+        [Then(@"shouldn't exists people")]
+        public void ThenShouldnTExistsPeople() =>
+            _container.GetInstance<IPersonListFeature>().Exec().Count().ShouldEqual(0);
+
         [Then(@"the following homes should exists")]
         public void FollowingHomesShouldExists(Table table) =>
             table.CompareToSet(lastNEntities);

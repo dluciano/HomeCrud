@@ -11,6 +11,7 @@ namespace HomeCrud.Test.Specs
         public ModuleManager()
         {
             Container.Options.DefaultScopedLifestyle = new LifetimeScopeLifestyle();
+
             Container.Register<DbContext, DataBaseContext>(Lifestyle.Scoped);
             Container.Register(typeof(IDataSource<>), typeof(EntityFrameworkDataSource<>), Lifestyle.Scoped);
             Container.Register(typeof(IWriteRepository<>), typeof(WriteRepository<>), Lifestyle.Scoped);

@@ -18,7 +18,7 @@ namespace HomeCrud.Test.Specs
         public void SaveChanges() =>
             _context.SaveChanges();
 
-        private class Transaction : ITransaction
+        public class Transaction : ITransaction
         {
             private DbContextTransaction _dbTrans;
 
@@ -26,6 +26,9 @@ namespace HomeCrud.Test.Specs
             {
                 _dbTrans = dbTrans;
             }
+
+            public virtual void Commit() =>
+                _dbTrans.Commit();
 
             public void Dispose() =>
                 _dbTrans.Dispose();

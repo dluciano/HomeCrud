@@ -79,8 +79,22 @@ Scenario: Delete Home
 		| Field   | Value        |
 		| Name    | Trump's Home |
 		| Address | Test Address |
+	And I add a person with the following data to that home
+		| Field          | Value       |
+		| FirstName      | Sister      |
+		| LastName       | Peña        |
+		| Gender         | Female      |
+		| Identification | 00128739233 |
+	And I add a person with the following data to that home
+		| Field          | Value       |
+		| FirstName      | Test        |
+		| LastName       | Peña        |
+		| Gender         | Female      |
+		| Identification | 00138739233 |
 	When I delete the last home
 	Then should exists a home with data
 		| Field   | Value            |
 		| Name    | NotDelete's Home |
 		| Address | Test Address     |
+	And the count of homes should be 1
+	And shouldn't exists people
