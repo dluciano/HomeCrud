@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.Test", "HomeCrud.Test\HomeCrud.Test.csproj", "{DAFCA86B-CD51-43EC-BDFE-24E6B1F970CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.Test", "Backend\HomeCrud.Test\HomeCrud.Test.csproj", "{DAFCA86B-CD51-43EC-BDFE-24E6B1F970CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.Core", "HomeCrud.Core\HomeCrud.Core.csproj", "{2FC5E2A5-5B9C-459A-B17F-9AEBF8E37090}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.Core", "Backend\HomeCrud.Core\HomeCrud.Core.csproj", "{2FC5E2A5-5B9C-459A-B17F-9AEBF8E37090}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.DA.EntityFramework", "HomeCrud.DA.EntityFramework\HomeCrud.DA.EntityFramework.csproj", "{EC5BFC6C-9742-4710-9817-4427096E25AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.DA.EntityFramework", "Backend\HomeCrud.DA.EntityFramework\HomeCrud.DA.EntityFramework.csproj", "{EC5BFC6C-9742-4710-9817-4427096E25AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.DA.Common", "HomeCrud.DA.Abstract\HomeCrud.DA.Common.csproj", "{F1C067DD-A393-4BA5-94E0-7C2C3C675DF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.DA.Common", "Backend\HomeCrud.DA.Abstract\HomeCrud.DA.Common.csproj", "{F1C067DD-A393-4BA5-94E0-7C2C3C675DF4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{7FC249D6-1879-43A2-A769-274C565DF381}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{0DA07F52-2124-4684-B992-C127D7B4D4C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.Entities", "HomeCrud.Entities\HomeCrud.Entities.csproj", "{0FFE093F-6E76-44C6-8ED7-D76DE7EADE19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.Entities", "Backend\HomeCrud.Entities\HomeCrud.Entities.csproj", "{0FFE093F-6E76-44C6-8ED7-D76DE7EADE19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.ModuleManager", "HomeCrud.ModuleManager\HomeCrud.ModuleManager.csproj", "{86449CD2-0053-46DE-92E9-D8B2F3F9E18B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.ModuleManager", "Backend\HomeCrud.ModuleManager\HomeCrud.ModuleManager.csproj", "{86449CD2-0053-46DE-92E9-D8B2F3F9E18B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCrud.Web", "Frontend\HomeCrud.Web\HomeCrud.Web.csproj", "{40D05EBA-07E8-43F2-8031-1A929B93670E}"
 EndProject

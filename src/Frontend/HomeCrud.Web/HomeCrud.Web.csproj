@@ -197,6 +197,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -265,6 +266,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Homes\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -279,6 +281,28 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Backend\HomeCrud.Core\HomeCrud.Core.csproj">
+      <Project>{2fc5e2a5-5b9c-459a-b17f-9aebf8e37090}</Project>
+      <Name>HomeCrud.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Backend\HomeCrud.DA.Abstract\HomeCrud.DA.Common.csproj">
+      <Project>{f1c067dd-a393-4ba5-94e0-7c2c3c675df4}</Project>
+      <Name>HomeCrud.DA.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Backend\HomeCrud.DA.EntityFramework\HomeCrud.DA.EntityFramework.csproj">
+      <Project>{ec5bfc6c-9742-4710-9817-4427096e25ad}</Project>
+      <Name>HomeCrud.DA.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Backend\HomeCrud.Entities\HomeCrud.Entities.csproj">
+      <Project>{0ffe093f-6e76-44c6-8ed7-d76de7eade19}</Project>
+      <Name>HomeCrud.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Backend\HomeCrud.ModuleManager\HomeCrud.ModuleManager.csproj">
+      <Project>{86449cd2-0053-46de-92e9-d8b2f3f9e18b}</Project>
+      <Name>HomeCrud.ModuleManager</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
