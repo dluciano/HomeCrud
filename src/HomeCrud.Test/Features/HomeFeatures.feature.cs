@@ -108,12 +108,12 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="View Home Details")]
+        [Xunit.FactAttribute(DisplayName="List Homes")]
         [Xunit.TraitAttribute("FeatureTitle", "Home Features")]
-        [Xunit.TraitAttribute("Description", "View Home Details")]
-        public virtual void ViewHomeDetails()
+        [Xunit.TraitAttribute("Description", "List Homes")]
+        public virtual void ListHomes()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View Home Details", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("List Homes", ((string[])(null)));
 #line 16
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -158,12 +158,12 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Update Home")]
+        [Xunit.FactAttribute(DisplayName="View Home Details")]
         [Xunit.TraitAttribute("FeatureTitle", "Home Features")]
-        [Xunit.TraitAttribute("Description", "Update Home")]
-        public virtual void UpdateHome()
+        [Xunit.TraitAttribute("Description", "View Home Details")]
+        public virtual void ViewHomeDetails()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Home", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View Home Details", ((string[])(null)));
 #line 31
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -178,29 +178,67 @@ this.ScenarioSetup(scenarioInfo);
                         "Test Address"});
 #line 32
  testRunner.Given("I create a home with the following data", ((string)(null)), table6, "Given ");
+#line 36
+ testRunner.When("I access the details of the last created home", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table7.AddRow(new string[] {
                         "Name",
-                        "Hillary\'s Home"});
+                        "Fransic\'s Home"});
             table7.AddRow(new string[] {
                         "Address",
-                        "Test Address 3"});
-#line 36
- testRunner.And("I update the last home created with the following data", ((string)(null)), table7, "And ");
-#line 40
- testRunner.When("I list the last 1 created homes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "Test Address"});
+#line 37
+ testRunner.Then("the following home should exists", ((string)(null)), table7, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Update Home")]
+        [Xunit.TraitAttribute("FeatureTitle", "Home Features")]
+        [Xunit.TraitAttribute("Description", "Update Home")]
+        public virtual void UpdateHome()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Home", ((string[])(null)));
+#line 42
+this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table8.AddRow(new string[] {
+                        "Name",
+                        "Fransic\'s Home"});
+            table8.AddRow(new string[] {
+                        "Address",
+                        "Test Address"});
+#line 43
+ testRunner.Given("I create a home with the following data", ((string)(null)), table8, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table9.AddRow(new string[] {
+                        "Name",
+                        "Hillary\'s Home"});
+            table9.AddRow(new string[] {
+                        "Address",
+                        "Test Address 3"});
+#line 47
+ testRunner.And("I update the last home created with the following data", ((string)(null)), table9, "And ");
+#line 51
+ testRunner.When("I list the last 1 created homes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Address"});
-            table8.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Hillary\'s Home",
                         "Test Address 3"});
-#line 41
- testRunner.Then("the following homes should exists", ((string)(null)), table8, "Then ");
+#line 52
+ testRunner.Then("the following homes should exists", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -211,34 +249,8 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void DeleteHome()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete Home", ((string[])(null)));
-#line 45
+#line 56
 this.ScenarioSetup(scenarioInfo);
-#line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table9.AddRow(new string[] {
-                        "Name",
-                        "NotDelete\'s Home"});
-            table9.AddRow(new string[] {
-                        "Address",
-                        "Test Address"});
-#line 46
- testRunner.Given("I create a home with the following data", ((string)(null)), table9, "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table10.AddRow(new string[] {
-                        "Name",
-                        "Trump\'s Home"});
-            table10.AddRow(new string[] {
-                        "Address",
-                        "Test Address"});
-#line 50
- testRunner.And("I create a home with the following data", ((string)(null)), table10, "And ");
-#line 54
- testRunner.When("I delete the last home", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -249,8 +261,34 @@ this.ScenarioSetup(scenarioInfo);
             table11.AddRow(new string[] {
                         "Address",
                         "Test Address"});
-#line 55
- testRunner.Then("should exists a home with data", ((string)(null)), table11, "Then ");
+#line 57
+ testRunner.Given("I create a home with the following data", ((string)(null)), table11, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table12.AddRow(new string[] {
+                        "Name",
+                        "Trump\'s Home"});
+            table12.AddRow(new string[] {
+                        "Address",
+                        "Test Address"});
+#line 61
+ testRunner.And("I create a home with the following data", ((string)(null)), table12, "And ");
+#line 65
+ testRunner.When("I delete the last home", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table13.AddRow(new string[] {
+                        "Name",
+                        "NotDelete\'s Home"});
+            table13.AddRow(new string[] {
+                        "Address",
+                        "Test Address"});
+#line 66
+ testRunner.Then("should exists a home with data", ((string)(null)), table13, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

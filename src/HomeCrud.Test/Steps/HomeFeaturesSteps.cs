@@ -27,6 +27,15 @@ namespace HomeCrud.Test.Specs
             feature.Exec(request);
         }
 
+        [When(@"I access the details of the last created home")]
+        public void AccessDetails()
+        {
+            var request = new HomeDetailsRequest();
+            var entities = _container.GetInstance<IListHomeFeature>().Exec();
+            request.Id = entities.Last().Id;
+            _homeDetails = _container.GetInstance<IHomeDetailsFeature>().Exec(request);
+        }
+
         [When(@"I list the last (.*) created homes")]
         public void WhenIListTheLastCreatedHomes(int count)
         {
@@ -45,6 +54,12 @@ namespace HomeCrud.Test.Specs
             feature.Exec(request);
         }
 
+        [Then(@"the following home should exists")]
+        public void ThenTheFollowingHomeShouldExists(Table table)
+        {
+            table.CompareToInstance(_homeDetails);
+        }
+
         [Then(@"should exists a home with data")]
         public void LastShouldBeEqulsTo(Table table)
         {
@@ -59,5 +74,6 @@ namespace HomeCrud.Test.Specs
             table.CompareToSet(lastNEntities);
 
         private IEnumerable<HomeRowResponse> lastNEntities;
+        private HomeDetailsResponse _homeDetails;
     }
 }

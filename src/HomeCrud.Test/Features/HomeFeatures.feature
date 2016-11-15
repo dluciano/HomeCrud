@@ -13,7 +13,7 @@ Scenario: Create Home
 		| Name    | Peña's Home  |
 		| Address | Test Address |
 
-Scenario: View Home Details
+Scenario: List Homes
 	Given I create a home with the following data
 		| Field   | Value          |
 		| Name    | Fransic's Home |
@@ -28,6 +28,17 @@ Scenario: View Home Details
 		| Fransic's Home | Test Address   |
 		| Trumps's Home  | Test Address 2 |
 
+Scenario: View Home Details
+	Given I create a home with the following data
+		| Field   | Value          |
+		| Name    | Fransic's Home |
+		| Address | Test Address   |
+	When I access the details of the last created home
+	Then the following home should exists
+		| Field   | Value          |
+		| Name    | Fransic's Home |
+		| Address | Test Address   |
+	
 Scenario: Update Home
 	Given I create a home with the following data
 		| Field   | Value          |

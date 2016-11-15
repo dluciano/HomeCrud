@@ -124,6 +124,9 @@
     <Compile Include="Steps\DeleteHomeRequest.cs" />
     <Compile Include="Steps\Gender.cs" />
     <Compile Include="Steps\Home.cs" />
+    <Compile Include="Steps\HomeDetailsFeature.cs" />
+    <Compile Include="Steps\HomeDetailsRequest.cs" />
+    <Compile Include="Steps\HomeDetailsResponse.cs" />
     <Compile Include="Steps\HomeFeaturesSteps.cs" />
     <Compile Include="Steps\ICreateHomeFeature.cs" />
     <Compile Include="Steps\ICreatePersonFeature.cs" />
@@ -131,6 +134,7 @@
     <Compile Include="Steps\IDeleteHomeFeature.cs" />
     <Compile Include="Steps\IEntity.cs" />
     <Compile Include="Steps\IFactory.cs" />
+    <Compile Include="Steps\IHomeDetailsFeature.cs" />
     <Compile Include="Steps\IListHomeFeature.cs" />
     <Compile Include="Steps\IPersonDetailFeature.cs" />
     <Compile Include="Steps\IPersonListFeature.cs" />
