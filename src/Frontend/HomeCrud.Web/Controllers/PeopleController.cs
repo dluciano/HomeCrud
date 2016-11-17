@@ -10,13 +10,13 @@ namespace HomeCrud.Web.Controllers
         private readonly IListHomeFeature _listHomeFeature;
         private readonly ICreatePersonFeature _createFeature;
         private readonly IPersonDetailFeature _detailsFeature;
-        private readonly IUpdateHomeFeature _updateFeature;
+        private readonly IUpdatePersonFeature _updateFeature;
         private readonly IDeletePersonFeature _deleteFeature;
 
         public PeopleController(IListHomeFeature listHomeFeature,
             IPersonDetailFeature detailFeature,
             ICreatePersonFeature createFeature,
-            IUpdateHomeFeature updateFeature,
+            IUpdatePersonFeature updateFeature,
             IDeletePersonFeature deleteFeature)
         {
             _listHomeFeature = listHomeFeature;
@@ -47,11 +47,11 @@ namespace HomeCrud.Web.Controllers
             return RedirectToAction("Details", "Homes", new { id = request.Home });
         }
 
-        public ActionResult Update(int id) => View(new UpdateHomeRequest { Id = id });
+        public ActionResult Update(int id) => View(new UpdatePersonRequest { Id = id });
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Update(UpdateHomeRequest request)
+        public ActionResult Update(UpdatePersonRequest request)
         {
             if (!ModelState.IsValid)
                 return View(request);
