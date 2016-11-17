@@ -3,7 +3,7 @@
 Simple crud web app to demostrate programming skils
 
 This project include: 
-
+* [Web Site](http://sammycristian20-001-site4.btempurl.com/).
 * A crud for creating homes.
 * A crud for identifying people who lives in a specific home.
 
@@ -19,6 +19,11 @@ This project include:
 * ASP.NET MVC 5 (Razor)
 
 ##Release Notes
+
+v0.3 Everything is working in the test
+
+* Project published to [host](http://sammycristian20-001-site4.btempurl.com/).
+* Bug Fixed: Update person in web project is working now.
 
 v0.3 Everything is working in the test
 
